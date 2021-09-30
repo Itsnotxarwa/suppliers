@@ -1,0 +1,36 @@
+<h2>Suppliers list</h2>
+ <table class="table table-light">
+    <thead> 
+         <tr>
+            <th scope="col">#</th>
+             <th scope="col">Id</th>
+             <th scope="col">Email</th>
+             <th scope="col">Full Name</th>
+             <th scope="col">Activated</th>
+             <th scope="col">Verified</th>
+             <th scope="col">Business Informations</th>
+             <th scope="col">Categories</th>
+         </tr>
+    </thead>
+    <tbody>
+         <tr *ngFor="let supplier of suppliers">
+             <img [src]= "supplier.avatar">
+             <img [src]= "supplier.coverPicture">
+             <td> {{ supplier.id }} </td>
+             <td> {{ supplier.email }} </td>
+             <td> {{ supplier.fullName }} </td>
+             <td> {{ supplier.isActivated }} </td>
+             <td> {{ supplier.isVerified }} </td>
+             <td> Business Type: {{ supplier.businessInformations.businessType }} 
+               Telephone: {{ supplier.businessInformations.telephone }} <br>
+               Mobile Phone: {{ supplier.businessInformations.mobilePhone }} <br>
+               Address: {{ supplier.businessInformations.address }} <br>
+               Wilaya: {{ supplier.businessInformations.wilaya }} <br>
+               Commune: {{ supplier.businessInformations.commune }} <br>
+             </td>
+             <td> {{ supplier.usedCategories }} </td>
+              
+         </tr>
+    </tbody>
+ </table>
+
